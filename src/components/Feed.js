@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import SideBar from "./SideBar";
+
+import { SideBar, Videos } from "./";
 
 const Feed = () => {
   return (
@@ -19,7 +20,14 @@ const Feed = () => {
           Copyright 2023 Asad Ali
         </Typography>
       </Box>
-      <Box>Main</Box>
+
+      <Box p={2} overflowY="auto" flex={2} height="90vh">
+        <Typography variant="h4" fontWeight="bold" mb={2}>
+          New <span style={{ color: "#fc1503" }}>Videos</span>
+        </Typography>
+
+        <Videos />
+      </Box>
     </Stack>
   );
 };
