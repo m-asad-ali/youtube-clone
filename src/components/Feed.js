@@ -17,7 +17,10 @@ const Feed = () => {
         px={{ sx: "0", md: "2" }}
         borderRight="1px solid #3d3d3d"
       >
-        <SideBar />
+        <SideBar
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         <Typography className="copyright" variant="body2" mt="1.5">
           Copyright 2023 Asad Ali
         </Typography>
