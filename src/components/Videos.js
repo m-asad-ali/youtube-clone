@@ -1,7 +1,8 @@
-import React from "react";
+import { Box, Stack } from "@mui/material";
 
-const Videos = () => {
-  return <div>Videos</div>;
+const Videos = (videos) => {
+  console.log(videos);
+  return <Stack>Videos</Stack>;
 };
 
 export default Videos;

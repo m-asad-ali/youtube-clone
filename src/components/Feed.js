@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
-
+import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { SideBar, Videos } from "./";
+// import { useNavigation } from "react-router-dom";
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState("New");
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    setVideos([]);
+
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      setVideos(data.items)
+    );
+  }, [selectedCategory]);
+
   return (
     <Stack
       flexDirection={{ sx: "column", md: "row" }}
@@ -32,7 +43,7 @@ const Feed = () => {
           {selectedCategory} <span style={{ color: "#fc1503" }}>Videos</span>
         </Typography>
 
-        <Videos />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   );

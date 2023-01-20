@@ -20,6 +20,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
             color: "white",
             backgroundColor: selectedCategory === el.name && "#FC1503",
           }}
+          key={el.name}
         >
           <span
             style={{
